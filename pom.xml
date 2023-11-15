@@ -11,8 +11,8 @@
     <groupId>com</groupId>
     <artifactId>unirent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>unirent</name>
-    <description>unirent</description>
+    <name>uni_rent</name>
+    <description>uni_rent</description>
     <properties>
         <java.version>17</java.version>
     </properties>

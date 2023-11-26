@@ -15,6 +15,7 @@ public class Apartment {
     @Column(name = "id")
     private Long id;
 
+<<<<<<< HEAD
     @Column(name = "title")
     private String title;
 
@@ -75,4 +76,17 @@ public class Apartment {
     // Add other necessary fields related to Apartment entity, if needed
 
     // Constructors, getters, setters, and other methods can be added as needed
+=======
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    @Column(name = "monthly_rent")
+    private BigDecimal monthlyRent;
+>>>>>>> fbbb75eaf3c61c745c8e18e1658ba1f15f08b892
 }

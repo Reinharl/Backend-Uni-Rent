@@ -3,9 +3,9 @@ package com.unirent.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "rent")
-@Data
 public class Rent {
 
     @Id
@@ -14,11 +14,11 @@ public class Rent {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "apartment_id", nullable = false)
+    @JoinColumn(name = "apartment", nullable = false)
     private Apartment apartment;
 
     @ManyToOne
-    @JoinColumn(name = "lodger_id", nullable = false)
+    @JoinColumn(name = "lodger", nullable = false)
     private Customer lodger;
 
 

@@ -3,10 +3,10 @@ package com.unirent.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
-@Table(name = "customer_interest")
 @Data
-public class Customer_interest {
+@Entity
+@Table(name = "lodger_interest")
+public class LodgerInterest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +14,11 @@ public class Customer_interest {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "lodger")
     private Customer lodger;
 
     @ManyToOne
-    @JoinColumn(name = "interest_id", nullable = false)
+    @JoinColumn(name = "interest")
     private Interest interest;
 
-    // Constructors, getters, setters, and other methods can be added as needed
 }

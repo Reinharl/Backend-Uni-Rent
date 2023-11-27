@@ -5,9 +5,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+@Data
 @Entity
 @Table(name = "customer")
-@Data
 public class Customer {
 
     @Id
@@ -30,8 +30,8 @@ public class Customer {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "birthdate")
     @Temporal(TemporalType.DATE)
+    @Column(name = "birthdate")
     private Date birthdate;
 
     @Column(name = "image_url")

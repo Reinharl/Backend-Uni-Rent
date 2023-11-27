@@ -5,9 +5,9 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
+@Data
 @Entity
 @Table(name = "apartment")
-@Data
 public class Apartment {
 
     @Id
@@ -15,15 +15,11 @@ public class Apartment {
     @Column(name = "id")
     private Long id;
 
-<<<<<<< HEAD
     @Column(name = "title")
     private String title;
 
     @Column(name = "description")
     private String description;
-    
-    @Column(name = "image_url")
-    private String imageUrl;
 
     @Column(name = "type")
     private String type;
@@ -43,10 +39,7 @@ public class Apartment {
     @Column(name = "bathrooms")
     private int bathrooms;
 
-    @Column(name = "monthly_rent")
-    private BigDecimal monthlyRent;
-
-    @Column(name = "montly_price")
+    @Column(name = "monthly_price")
     private BigDecimal monthlyPrice;
 
     @Column(name = "rooms")
@@ -65,28 +58,13 @@ public class Apartment {
     private BigDecimal deposit;
 
     @Column(name = "heating")
-    private String heating;
+    private boolean heating;
 
     @Column(name = "available")
     private boolean available;
 
-    @Column(name = "owner")
-    private String owner;
+    @ManyToOne
+    @JoinColumn(name = "owner")
+    private Customer owner;
 
-    // Add other necessary fields related to Apartment entity, if needed
-
-    // Constructors, getters, setters, and other methods can be added as needed
-=======
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "image_url")
-    private String imageUrl;
-
-    @Column(name = "monthly_rent")
-    private BigDecimal monthlyRent;
->>>>>>> fbbb75eaf3c61c745c8e18e1658ba1f15f08b892
 }

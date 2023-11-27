@@ -3,10 +3,10 @@ package com.unirent.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "apartment_image")
-@Data
-public class Apartment_image {
+public class ApartmentImage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +14,10 @@ public class Apartment_image {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "apartment_id", nullable = false)
+    @JoinColumn(name = "apartment")
     private Apartment apartment;
 
     @Column(name = "image_url")
     private String imageUrl;
-
 
 }

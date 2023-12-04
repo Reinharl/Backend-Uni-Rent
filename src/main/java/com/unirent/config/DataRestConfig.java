@@ -19,6 +19,7 @@ import java.util.Set;
 public class DataRestConfig implements RepositoryRestConfigurer {
 
     private final EntityManager entityManager;
+    private String allowedOrigins = "http://localhost:5173";
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
@@ -48,6 +49,10 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 
         // expose entity id
         exposedIds(config);
+
+        // configure CORS Mapping
+        cors.addMapping(config.getBasePath() + "/**")
+                .allowedOrigins(allowedOrigins);
     }
 
     private static void disableHttpMethods(Class _class, RepositoryRestConfiguration config, HttpMethod[] unsupportedActions) {

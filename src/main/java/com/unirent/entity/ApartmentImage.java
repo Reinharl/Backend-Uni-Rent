@@ -17,7 +17,7 @@ public class ApartmentImage {
     @JoinColumn(name = "apartment")
     private Apartment apartment;
 
-    @Column(name = "image_url")
-    private String imageUrl;
+    @Column(name = "image")
+    private String image;
 
 }

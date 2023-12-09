@@ -10,6 +10,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "apartment-images", path = "apartment-images")
 public interface ApartmentImageRepository extends JpaRepository<ApartmentImage, Long> {
 
-    @RestResource(path = "byApartmentId")
+    @RestResource(path = "findByApartmentId")
     List<ApartmentImage> findByApartment_Id(Long id);
 }

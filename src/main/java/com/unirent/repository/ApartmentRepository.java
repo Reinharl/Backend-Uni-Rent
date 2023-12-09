@@ -1,6 +1,8 @@
 package com.unirent.repository;
 
 import com.unirent.entity.Apartment;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,5 +16,5 @@ public interface ApartmentRepository extends JpaRepository<Apartment, Long> {
     @Query("SELECT DISTINCT apartment.city FROM Apartment apartment")
     List<String> findDistinctCities();
 
-    List<Apartment> findByCity(@Param("city") String city);
+    Page<Apartment> findByCity(@Param("city") String city, Pageable pageable);
 }

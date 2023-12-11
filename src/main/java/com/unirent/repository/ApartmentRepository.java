@@ -19,10 +19,14 @@ public interface ApartmentRepository extends JpaRepository<Apartment, Long> {
     @Query("SELECT apartment " +
             "FROM Apartment apartment " +
             "WHERE ((:city is null or trim(:city) = '') or apartment.city = :city) " +
-            "and (:heating is null or apartment.heating = :heating)"
+            "and (:heating is null or apartment.heating = :heating)" +
+            "and (:animals is null or apartment.animals = :animals)" +
+            "and (:available is null or apartment.available = :available)"
     )
     Page<Apartment> findApartmentFilters(
             @Param("city") String city,
             @Param("heating") Boolean heating,
+            @Param("animals") Boolean animals,
+            @Param("available") Boolean available,
             Pageable pageable);
 }

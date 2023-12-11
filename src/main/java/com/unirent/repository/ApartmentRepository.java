@@ -16,5 +16,13 @@ public interface ApartmentRepository extends JpaRepository<Apartment, Long> {
     @Query("SELECT DISTINCT apartment.city FROM Apartment apartment")
     List<String> findDistinctCities();
 
-    Page<Apartment> findByCity(@Param("city") String city, Pageable pageable);
+    @Query("SELECT apartment " +
+            "FROM Apartment apartment " +
+            "WHERE (:city is null or apartment.city = :city) " +
+            "and (:heating is null or apartment.heating = :heating)"
+    )
+    Page<Apartment> findApartmentFilters(
+            @Param("city") String city,
+            @Param("heating") Boolean heating,
+            Pageable pageable);
 }

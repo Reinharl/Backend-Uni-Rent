@@ -7,3 +7,5 @@ spring:
   data:
     rest:
       base-path: /api
+
+stripe.secret.key=sk_test_51OOQ7uKHQZnt6NMnsd878BZxi3AXaMskUKkWUyamqJDeu505z1w8TscPhzF5M7Fj6trki99UDiaORbUMU3FbdlaP00oqUdSc54

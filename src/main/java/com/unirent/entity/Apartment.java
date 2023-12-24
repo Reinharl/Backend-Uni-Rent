@@ -63,6 +63,48 @@ public class Apartment {
     @Column(name = "available")
     private boolean available;
 
+    @Column(name = "wifi")
+    private boolean wifi;
+
+    @Column(name = "elevator")
+    private boolean elevator;
+
+    @Column(name = "kitchen")
+    private boolean kitchen;
+
+    @Column(name = "washing_machine")
+    private boolean washingMachine ;
+
+    @Column(name = "dishwasher")
+    private boolean dishwasher;
+
+    @Column(name = "room_study")
+    private boolean roomStudy;
+
+    @Column(name = "garden")
+    private boolean garden;
+
+    @Column(name = "alarm")
+    private boolean alarm;
+
+    @Column(name = "air_conditioning")
+    private boolean airConditioning;
+
+    @Column(name = "furniture")
+    private boolean furniture ;
+
+    @Column(name = "ensuite_bathroom")
+    private boolean ensuiteBathroom;
+
+    @Column(name = "soundproof_windows")
+    private boolean soundproofWindows;
+
+    @Column(name = "bills_included")
+    private boolean billsIncluded;
+
+    @Column(name = "bike_storage")
+    private boolean bikeStorage;
+
     @ManyToOne
     @JoinColumn(name = "owner")
     private Customer owner;

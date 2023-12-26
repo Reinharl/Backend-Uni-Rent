@@ -7,3 +7,9 @@ spring:
   data:
     rest:
       base-path: /api
+
+openai:
+  model: gpt-3.5-turbo
+  api:
+    url: https://api.openai.com/v1/chat/completions
+    key: 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
